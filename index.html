@@ -11,7 +11,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 1200px;
             margin: auto;
             padding: 20px;
             color: #333;
@@ -19,22 +19,35 @@
 
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
         }
 
-        h1, h2 {
+        header h1 {
+            margin-bottom: 20px;
             color: #2c3e50;
         }
 
-        .container {
+        header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+
+        .main-container {
             display: flex;
+            gap: 30px;
         }
 
         .sidebar {
             width: 200px;
             background-color: #f4f4f4;
             padding: 20px;
+            border-radius: 8px;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            height: fit-content;
         }
 
         .sidebar a {
@@ -42,6 +55,7 @@
             padding: 10px;
             color: #333;
             text-decoration: none;
+            border-radius: 4px;
         }
 
         .sidebar a:hover {
@@ -51,6 +65,13 @@
         .content {
             flex-grow: 1;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
         }
 
         ul {
@@ -59,7 +80,7 @@
         }
 
         ul li {
-            margin: 10px 0;
+            margin: 15px 0;
         }
 
         a {
@@ -70,15 +91,23 @@
         a:hover {
             text-decoration: underline;
         }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Elmasnur Yılmaz's Website</h1>
-        <p>Hello! I'm Elmasnur Yılmaz, and this is my personal website. Here, you’ll find information about my research, projects, and professional background.</p>
+        <p>Hello! I'm Elmasnur Yılmaz, and this is my personal website. Here, you'll find information about my research, projects, and professional background.</p>
     </header>
 
-    <div class="container">
+    <div class="main-container">
         <div class="sidebar">
             <h2>Navigation</h2>
             <a href="#about">About Me</a>
@@ -110,7 +139,7 @@
 
             <section id="contact">
                 <h2>Contact</h2>
-                <p>Feel free to <a href="mailto:elmasnrylmz@gmail.com">email me</a> if you’d like to get in touch or discuss potential collaborations. You can also check out my projects and follow my updates here.</p>
+                <p>Feel free to <a href="mailto:elmasnrylmz@gmail.com">email me</a> if you'd like to get in touch or discuss potential collaborations. You can also check out my projects and follow my updates here.</p>
             </section>
         </div>
     </div>
