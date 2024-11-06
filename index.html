@@ -4,50 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elmasnur Yılmaz's Personal Website</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Elmasnur Yılmaz's personal website, sharing bioinformatics projects, CV, and blog posts on molecular biology and computational analysis.">
-    <meta name="keywords" content="Elmasnur Yılmaz, bioinformatics, RNA-seq, molecular biology, CV, blog">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
             color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        header {
+        .welcome-section {
             text-align: center;
-            margin-bottom: 40px;
             padding: 40px 20px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
         }
 
-        header h1 {
-            margin-bottom: 20px;
+        .welcome-section h1 {
             color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
         }
 
-        header p {
+        .welcome-section p {
             max-width: 800px;
             margin: 0 auto;
             font-size: 1.1em;
         }
 
-        .main-container {
-            display: flex;
+        .page-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
             gap: 30px;
+            margin-top: 30px;
         }
 
         .sidebar {
-            width: 200px;
             background-color: #f4f4f4;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
             height: fit-content;
+        }
+
+        .sidebar h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
 
         .sidebar a {
@@ -55,6 +63,7 @@
             padding: 10px;
             color: #333;
             text-decoration: none;
+            margin-bottom: 5px;
             border-radius: 4px;
         }
 
@@ -63,20 +72,25 @@
         }
 
         .content {
-            flex-grow: 1;
-            padding: 20px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
         }
 
-        h1, h2 {
+        .content section {
+            margin-bottom: 40px;
+        }
+
+        .content h2 {
             color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
         }
 
         ul {
             list-style-type: none;
-            padding: 0;
         }
 
         ul li {
@@ -91,32 +105,24 @@
         a:hover {
             text-decoration: underline;
         }
-
-        section {
-            margin-bottom: 30px;
-        }
-
-        section:last-child {
-            margin-bottom: 0;
-        }
     </style>
 </head>
 <body>
-    <header>
+    <div class="welcome-section">
         <h1>Welcome to Elmasnur Yılmaz's Website</h1>
         <p>Hello! I'm Elmasnur Yılmaz, and this is my personal website. Here, you'll find information about my research, projects, and professional background.</p>
-    </header>
+    </div>
 
-    <div class="main-container">
-        <div class="sidebar">
+    <div class="page-container">
+        <aside class="sidebar">
             <h2>Navigation</h2>
             <a href="#about">About Me</a>
             <a href="#blog">Blog</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-        </div>
+        </aside>
 
-        <div class="content">
+        <main class="content">
             <section id="about">
                 <h2>About Me</h2>
                 <p>Born on February 14, in Soma, Manisa, Turkey, I am passionate about bioinformatics and molecular biology. I currently work extensively with RNA-seq and splicing analyses, using tools like RMATS-turbo and MAJIQ for differential expression and splicing studies. I'm detail-oriented, enjoy organizing my work, and rely on coffee to fuel my productivity!</p>
@@ -141,7 +147,7 @@
                 <h2>Contact</h2>
                 <p>Feel free to <a href="mailto:elmasnrylmz@gmail.com">email me</a> if you'd like to get in touch or discuss potential collaborations. You can also check out my projects and follow my updates here.</p>
             </section>
-        </div>
+        </main>
     </div>
 </body>
 </html>
