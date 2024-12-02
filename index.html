@@ -9,11 +9,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth; /* Add smooth scrolling */
+            scroll-behavior: smooth;
         }
 
         html {
-            scroll-padding-top: 100px; /* Add padding for anchor links */
+            scroll-padding-top: 100px;
         }
 
         body {
@@ -27,19 +27,18 @@
 
         .welcome-section {
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
             margin-bottom: 30px;
-            background-color: #fff;
-            position: sticky; /* Make welcome section sticky */
+            background-color: rgba(255, 255, 255, 0.95);
+            position: sticky;
             top: 0;
             z-index: 100;
-            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
         }
 
         .welcome-section h1 {
             color: #2c3e50;
             margin-bottom: 20px;
-            font-size: 2.5em;
+            font-size: 2em;
         }
 
         .welcome-section p {
@@ -60,8 +59,8 @@
             padding: 20px;
             border-radius: 8px;
             height: fit-content;
-            position: sticky; /* Make sidebar sticky */
-            top: 200px; /* Adjust based on your welcome section height */
+            position: sticky;
+            top: 200px;
         }
 
         .sidebar h2 {
@@ -76,12 +75,12 @@
             text-decoration: none;
             margin-bottom: 5px;
             border-radius: 4px;
-            transition: all 0.3s ease; /* Smooth transition for hover effect */
+            transition: all 0.3s ease;
         }
 
         .sidebar a:hover {
             background-color: #ddd;
-            transform: translateX(5px); /* Slight movement on hover */
+            transform: translateX(5px);
         }
 
         .content {
@@ -91,7 +90,7 @@
 
         .content section {
             margin-bottom: 40px;
-            padding-top: 20px; /* Add padding to prevent content from being hidden */
+            padding-top: 20px;
         }
 
         .content h2 {
@@ -120,13 +119,69 @@
             text-decoration: underline;
         }
 
-        /* Add active state for navigation links */
         .sidebar a.active {
             background-color: #ddd;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .welcome-section {
+                padding: 15px 10px;
+            }
+
+            .welcome-section h1 {
+                font-size: 1.5em;
+            }
+
+            .welcome-section p {
+                font-size: 1em;
+            }
+
+            .page-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sidebar {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .sidebar a {
+                padding: 15px 10px;
+                margin-bottom: 8px;
+                text-align: center;
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .content section {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media screen and (max-width: 480px) {
+            .welcome-section h1 {
+                font-size: 1.3em;
+            }
+
+            .content {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Rest of your HTML remains the same -->
     <div class="welcome-section">
         <h1>Welcome to Elmasnur Yılmaz's Website</h1>
         <p>Hello! I'm Elmasnur Yılmaz, and this is my personal website. Here, you'll find information about my research, projects, and professional background.</p>
@@ -156,7 +211,6 @@
             <section id="projects">
                 <h2>Projects</h2>
                 <ul>
-   
                     <li><a href="#">RNA-seq Analysis</a> - Conducting analyses to explore gene expression and splicing events.</li>
                     <li><a href="#">RMATSs-turbo and MAJIQ Tool</a> - Implementing splicing analysis for advanced insights.</li>
                 </ul>
@@ -170,7 +224,6 @@
     </div>
 
     <script>
-        // Add active state to navigation links based on scroll position
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.sidebar a');
