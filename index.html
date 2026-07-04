@@ -178,6 +178,20 @@ section{position:relative;z-index:1;padding:clamp(80px,12vh,140px) clamp(20px,5v
 .card .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .card .tags span{font-family:'JetBrains Mono';font-size:.72rem;padding:5px 11px;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid var(--card-brd);color:var(--cyan)}
 
+/* ---------- pipeline ---------- */
+.pipeline-block{margin-top:56px;padding:38px 32px;border:1px solid var(--card-brd);border-radius:22px;background:var(--card)}
+.pipeline-title{font-size:1.25rem;font-weight:700;margin-bottom:26px}
+.pipeline{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch}
+.pstep{position:relative;flex:1 1 150px;padding:18px 16px;border:1px solid var(--card-brd);border-radius:14px;background:rgba(255,255,255,.02);transition:.3s}
+.pstep:hover{transform:translateY(-4px);border-color:var(--magenta);background:rgba(255,61,129,.06)}
+.pstep:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--violet);font-weight:700;z-index:2}
+.pstep-k{font-family:'JetBrains Mono';font-size:.72rem;color:var(--magenta);letter-spacing:.1em}
+.pstep-t{font-family:'Sora';font-weight:700;font-size:1rem;margin:6px 0 8px}
+.pstep-tools{font-family:'JetBrains Mono';font-size:.72rem;color:var(--cyan);line-height:1.5}
+.pipeline-note{color:var(--muted);font-size:.95rem;margin-top:24px}
+.pipeline-note b{color:var(--ink);font-weight:600}
+@media(max-width:720px){.pstep:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-13px;transform:translateX(-50%)}}
+
 /* ---------- publications ---------- */
 .pubs{display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--card-brd);margin-left:6px}
 .pub{position:relative;padding:22px 0 22px 34px;transition:.3s}
@@ -313,8 +327,8 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
     <div class="stats">
       <div class="stat reveal"><div class="num" data-count="7">0</div><div class="lbl">Peer-reviewed papers</div></div>
       <div class="stat reveal"><div class="num" data-count="15" data-suffix="+">0</div><div class="lbl">Conf. presentations</div></div>
+      <div class="stat reveal"><div class="num" data-count="5">0</div><div class="lbl">Funded research projects</div></div>
       <div class="stat reveal"><div class="num" data-count="2" data-suffix="×">0</div><div class="lbl">National fellowships</div></div>
-      <div class="stat reveal"><div class="num" data-count="15" data-prefix="IF~">0</div><div class="lbl"><em>Brain</em> publication</div></div>
     </div>
   </div>
 </section>
@@ -365,6 +379,20 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
         <div class="tags"><span>ML</span><span>multi-omics</span><span>deep learning</span></div>
       </div>
     </div>
+
+    <!-- RNA-seq pipeline -->
+    <div class="pipeline-block reveal">
+      <h3 class="pipeline-title">My RNA-seq &amp; splicing pipeline</h3>
+      <div class="pipeline">
+        <div class="pstep"><div class="pstep-k">01</div><div class="pstep-t">Retrieve</div><div class="pstep-tools">ENA / SRA · fasterq-dump</div></div>
+        <div class="pstep"><div class="pstep-k">02</div><div class="pstep-t">Quality control</div><div class="pstep-tools">FastQC · MultiQC · Trim Galore</div></div>
+        <div class="pstep"><div class="pstep-k">03</div><div class="pstep-t">Align</div><div class="pstep-tools">STAR · HISAT2 · SAMtools · Picard</div></div>
+        <div class="pstep"><div class="pstep-k">04</div><div class="pstep-t">Quantify</div><div class="pstep-tools">featureCounts · StringTie</div></div>
+        <div class="pstep"><div class="pstep-k">05</div><div class="pstep-t">Splicing &amp; DE</div><div class="pstep-tools">rMATS · MAJIQ · DESeq2 · edgeR</div></div>
+        <div class="pstep"><div class="pstep-k">06</div><div class="pstep-t">Interpret</div><div class="pstep-tools">clusterProfiler · GO/KEGG · ggplot2</div></div>
+      </div>
+      <p class="pipeline-note">Wrapped in <b>Snakemake</b> / <b>Nextflow</b> and run on <b>SLURM</b> HPC — reproducible from raw reads to figures.</p>
+    </div>
   </div>
 </section>
 
@@ -395,7 +423,7 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
       <div class="pub reveal">
         <div class="yr">2021</div>
         <h4>High diagnostic rate of trio exome sequencing in consanguineous families with neurogenetic diseases</h4>
-        <div class="jr"><em>Brain</em><span class="badge">IF ~15 · High-impact</span></div>
+        <div class="jr"><em>Brain</em> · Oxford University Press</div>
       </div>
       <div class="pub reveal">
         <div class="yr">2021</div>
@@ -427,7 +455,7 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
       <div class="skill-col reveal">
         <h3>RNA-seq &amp; Splicing</h3>
         <div class="chips">
-          <span class="chip">STAR</span><span class="chip">HISAT2</span><span class="chip">rMATS</span><span class="chip">MAJIQ</span><span class="chip">SAMtools</span><span class="chip">featureCounts</span><span class="chip">StringTie</span><span class="chip">FastQC</span><span class="chip">MultiQC</span>
+          <span class="chip">STAR</span><span class="chip">HISAT2</span><span class="chip">rMATS</span><span class="chip">MAJIQ</span><span class="chip">SAMtools</span><span class="chip">BAMtools</span><span class="chip">Picard</span><span class="chip">featureCounts</span><span class="chip">HTSeq</span><span class="chip">StringTie</span><span class="chip">Cutadapt</span><span class="chip">Trim Galore</span><span class="chip">FastQC</span><span class="chip">MultiQC</span>
         </div>
       </div>
       <div class="skill-col reveal">
@@ -451,7 +479,7 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
       <div class="skill-col reveal">
         <h3>Genomics &amp; Variants</h3>
         <div class="chips">
-          <span class="chip">WES</span><span class="chip">VCF</span><span class="chip">BEDTools</span><span class="chip">Runs-of-Homozygosity</span><span class="chip">GTF / GFF</span><span class="chip">ENA / SRA</span>
+          <span class="chip">WES</span><span class="chip">VCF</span><span class="chip">BEDTools</span><span class="chip">GffCompare</span><span class="chip">GTFtools</span><span class="chip">Runs-of-Homozygosity</span><span class="chip">GTF / GFF</span><span class="chip">ENA / SRA</span>
         </div>
       </div>
       <div class="skill-col reveal">
