@@ -228,6 +228,8 @@ section{position:relative;z-index:1;padding:clamp(80px,12vh,140px) clamp(20px,5v
 .repo-meta .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:middle}
 .repo-cta{font-family:'JetBrains Mono';font-size:.8rem;color:var(--muted);margin-top:18px;display:inline-block}
 .repo:hover .repo-cta{color:var(--magenta)}
+.repo-tag{margin-left:auto;font-family:'JetBrains Mono';font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:100px;background:rgba(255,203,71,.14);color:var(--gold);border:1px solid rgba(255,203,71,.32);flex-shrink:0}
+.repo.flagship{border-color:rgba(255,203,71,.35)}
 
 /* ---------- publications ---------- */
 .pubs{display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--card-brd);margin-left:6px}
@@ -320,9 +322,9 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
       I earned my PhD at Ege University in 2026.
     </p>
     <p class="valueprop">
-      One of the few scientists who can <b>both run the wet-lab experiment and write the
-      pipeline that analyzes it</b> — I own RNA-processing projects end to end, from cell
-      to FASTQ to biological insight.
+      I'm equally at home <b>at the bench and in the terminal</b> — generating the data and
+      writing the code that makes sense of it — so I can carry a project from cell to FASTQ
+      to biological insight.
     </p>
     <div class="cta-row">
       <a href="#research" class="btn btn-primary">Research</a>
@@ -444,8 +446,8 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
     <div class="repos-block reveal">
       <h3 class="pipeline-title">Featured code &amp; reproducibility</h3>
       <div class="repos">
-        <a class="repo" href="https://github.com/elmasnuryilmaz/tdp43-thesis-reproducibility" target="_blank" rel="noopener">
-          <div class="repo-top"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg><span class="repo-name">tdp43-thesis-reproducibility</span></div>
+        <a class="repo flagship" href="https://github.com/elmasnuryilmaz/tdp43-thesis-reproducibility" target="_blank" rel="noopener">
+          <div class="repo-top"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg><span class="repo-name">tdp43-thesis-reproducibility</span><span class="repo-tag">Flagship</span></div>
           <p>The full computational backbone of my PhD thesis, engineered for one-command reproduction. Snakemake workflows drive the whole arc — TDP-43 knockdown → differential splicing (rMATS / MAJIQ) and expression (DESeq2) → protein-domain / FIS mapping, disease-overlap enrichment, pharmacology &amp; molecular docking, and wet-lab validation. Conda-pinned environments and a SHA-256 manifest guarantee bit-for-bit provenance from raw reads to every figure.</p>
           <div class="repo-meta"><span class="dot"></span>Snakemake · conda · rMATS/MAJIQ · DESeq2 · SHA-256 provenance</div>
           <span class="repo-cta">View on GitHub →</span>
@@ -472,26 +474,33 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">03 — Research vision</div>
-      <h2>Where I want to take this <span class="gradient-text">next</span></h2>
+      <h2>Where I want to go <span class="gradient-text">next</span></h2>
     </div>
     <div class="vision">
       <div class="vision-lead reveal">
-        I've shown <b>how</b> TDP-43 loss rewrites splicing, cryptic exons and polyadenylation.
-        Next, I want to move from <b>describing</b> that dysregulation to <b>correcting</b> it.
+        I keep returning to one question, in many different forms —
+        <b>how do we turn biological data into genuine understanding?</b>
       </div>
       <div class="vision-body reveal">
         <p>
-          Cryptic-exon biology has become one of the most promising fronts in ALS/FTD — from
-          <b>UNC13A</b> to RNA-targeted therapeutics. I want to help turn splicing dysregulation
-          into a therapeutic readout.
+          My work has moved across neurogenetics, RNA biology, cancer pharmacology and
+          rare-disease genomics, and the thread running through all of it has been computational:
+          finding the signal in noisy, high-dimensional data, and making every analysis
+          <b>reproducible enough to trust</b>.
+        </p>
+        <p>
+          I'm open in topic but deliberate in method. I'm drawn to problems where careful
+          bioinformatics changes what we can actually see in the biology — and I'd rather learn a
+          new system well than stay inside a single one.
         </p>
         <ul class="vision-goals">
-          <li>Map cryptic-exon and splicing programs at <b>single-cell / single-neuron</b> resolution.</li>
-          <li>Test which aberrant events are <b>druggable</b> — e.g. with antisense oligonucleotides.</li>
-          <li>Build the <b>computational tools</b> that read RNA-processing changes as disease and drug signals.</li>
+          <li>Turn large, messy biological datasets into <b>clear, reproducible answers</b>.</li>
+          <li>Grow deeper into <b>multi-omics integration and machine learning</b> for genomics.</li>
+          <li>Build analysis tools and workflows that <b>others can trust and reuse</b>.</li>
         </ul>
         <p style="margin-top:16px">
-          I bring the rare combination needed to do this under one roof: <b>bench + code</b>.
+          What I bring is depth and adaptability in equal measure — I pick up a new field
+          quickly, and I care about getting the analysis right.
         </p>
       </div>
     </div>
