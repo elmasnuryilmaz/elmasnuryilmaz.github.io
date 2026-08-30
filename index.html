@@ -10,6 +10,7 @@
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://elmasnuryilmaz.github.io/" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="theme-color" content="#07060f" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Dr. Elmasnur Yılmaz — Bioinformatician & RNA Biologist" />
@@ -313,6 +314,19 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
 }
 @media(max-width:480px){.stats{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.1s!important}}
+
+/* ---------- print: clean, ink-friendly layout ---------- */
+@media print{
+  :root{--bg:#fff;--bg-soft:#fff;--ink:#111;--muted:#333;--card:#fff;--card-brd:#ccc}
+  body{background:#fff;color:#111}
+  nav,.aurora,#rna,.grain,.glow,.progress,.scroll-ind,.burger,.marquee,.skip-link,.ss-gif,.navcta{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .gradient-text,.stat .num,.about-text .sig,.contact .email{-webkit-text-fill-color:#111!important;color:#111!important;background:none!important}
+  section{padding:14px 0!important}
+  a{color:#111!important}
+  .card,.stat,.skill-col,.fact,.repo,.pipeline-block,.valueprop,.pstep,.ss-figure img{background:#fff!important;border-color:#ccc!important;box-shadow:none!important}
+  .card:hover,.repo:hover,.stat:hover{transform:none!important}
+}
 </style>
 </head>
 <body>

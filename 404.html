@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Dr. Elmasnur Yılmaz</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#07060f" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#07060f;--ink:#f4f1ff;--muted:#a39fc4;--magenta:#ff3d81;--violet:#8b5cf6;--cyan:#22d3ee;--grad:linear-gradient(120deg,var(--magenta),var(--violet) 45%,var(--cyan))}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;padding:24px;overflow:hidden;position:relative}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.4;mix-blend-mode:screen;z-index:0}
+.b1{width:44vw;height:44vw;left:-10vw;top:-12vw;background:var(--magenta)}
+.b2{width:40vw;height:40vw;right:-10vw;bottom:-12vw;background:var(--cyan);opacity:.3}
+.wrap{position:relative;z-index:1;max-width:560px}
+.code{font-family:'JetBrains Mono';font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
+h1{font-family:'Sora';font-weight:800;font-size:clamp(4.5rem,20vw,9rem);line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-family:'Sora';font-weight:600;font-size:clamp(1.2rem,4vw,1.7rem);margin:8px 0 16px}
+p{color:var(--muted);font-size:1.05rem;margin-bottom:34px}
+a.home{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:var(--grad);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 10px 34px rgba(139,92,246,.4);transition:.28s}
+a.home:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(255,61,129,.5)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="blob b1" aria-hidden="true"></div>
+<div class="blob b2" aria-hidden="true"></div>
+<div class="wrap">
+  <div class="code">&gt; page not found</div>
+  <h1>404</h1>
+  <h2>This page got spliced out.</h2>
+  <p>The sequence you were looking for isn't in this transcript. Let's get you back to the main strand.</p>
+  <a class="home" href="/">← Back to home</a>
+</div>
+</body>
+</html>
