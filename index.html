@@ -115,6 +115,10 @@ nav.scrolled{backdrop-filter:blur(16px);background:rgba(7,6,15,.6);border-bottom
 .navlinks a:hover{color:var(--ink)}
 .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--grad);transition:.3s;border-radius:2px}
 .navlinks a:hover::after{width:100%}
+.navlinks a.active{color:var(--ink)}
+.navlinks a.active::after{width:100%}
+.navcta.active::after{width:0}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:60;transition:width .12s linear}
 .navcta{padding:9px 18px;border-radius:100px;background:var(--grad);color:#fff!important;font-weight:600;box-shadow:0 6px 24px rgba(255,61,129,.35);transition:.25s}
 .navcta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,61,129,.5)}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
@@ -306,6 +310,7 @@ footer code{font-family:'JetBrains Mono';color:var(--cyan)}
 </head>
 <body>
 
+<div class="progress" id="progress"></div>
 <div class="aurora"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
 <canvas id="rna"></canvas>
 <div class="grain"></div>
@@ -692,7 +697,30 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 
 /* nav scroll */
 const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+/* scroll progress bar + scroll-spy active nav (scroll-based, robust) */
+const progress=document.getElementById('progress');
+const spyIds=['about','research','vision','work','skills','contact'];
+const spyLinks={};
+document.querySelectorAll('.navlinks a[href^="#"]').forEach(a=>{
+  spyLinks[a.getAttribute('href').slice(1)]=a;
+});
+function onScroll(){
+  nav.classList.toggle('scrolled',scrollY>40);
+  const de=document.documentElement;
+  const max=de.scrollHeight-de.clientHeight;
+  progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+  const line=innerHeight*0.35;
+  let current=null;
+  for(const id of spyIds){
+    const el=document.getElementById(id);
+    if(el && el.getBoundingClientRect().top<=line) current=id;
+  }
+  for(const id in spyLinks) spyLinks[id].classList.toggle('active',id===current);
+}
+addEventListener('scroll',onScroll,{passive:true});
+addEventListener('resize',onScroll);
+onScroll();
 
 /* mobile menu */
 const burger=document.getElementById('burger'),links=document.getElementById('navlinks');
